@@ -1,4 +1,4 @@
-import {Color} from "./colors";
+import {Color} from "../constants/colors";
 
 export enum PowerState {
     ON = 'on',
@@ -73,14 +73,6 @@ export interface StateDeltaBody {
     brightness?: number;
     kelvin?: string;
     fast?: boolean
-}
-
-export interface PowerToggleBody {
-    duration?: number;
-}
-
-export interface EffectsOffBody {
-    power_off?: boolean;
 }
 
 export interface SendPulseBody {

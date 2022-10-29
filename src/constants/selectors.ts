@@ -1,9 +1,9 @@
 export interface Selector {
-    getValue: () => string;
+    formatSelector: () => string;
 }
 
 export class SelectorAll implements Selector {
-    getValue(): string {
+    formatSelector(): string {
         return 'all';
     }
 }
@@ -11,7 +11,7 @@ export class SelectorAll implements Selector {
 export class SelectorLightId implements Selector {
     constructor(private lightId: string) {}
 
-    getValue(): string {
+    formatSelector(): string {
         return `id:${this.lightId}`;
     }
 }
@@ -19,7 +19,7 @@ export class SelectorLightId implements Selector {
 export class SelectorGroupLabel implements Selector {
     constructor(private groupLabel: string) {}
 
-    getValue(): string {
+    formatSelector(): string {
         return `group:${this.groupLabel}`;
     }
 }
