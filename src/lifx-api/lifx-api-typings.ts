@@ -1,4 +1,9 @@
-export type PowerState = 'on' | 'off';
+import {Color} from "./colors";
+
+export enum PowerState {
+    ON = 'on',
+    OFF = 'off',
+}
 
 export interface Light {
     id: string;
@@ -42,8 +47,18 @@ export interface Light {
     seconds_since_seen: number;
 }
 
+export interface SetStateBody {
+    power?: PowerState;
+    color?: Color;
+    brightness?: number;
+    duration?: number;
+    infrared?: number; // Not supported by current lights
+    fast?: boolean;
+}
+
 export interface SetStateResult {
     id: string;
     status: 'ok' | string;
     label: string;
 }
+

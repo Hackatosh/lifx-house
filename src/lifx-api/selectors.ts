@@ -15,3 +15,11 @@ export class SelectorLightId implements Selector {
         return `id:${this.lightId}`;
     }
 }
+
+export class SelectorGroupLabel implements Selector {
+    constructor(private groupLabel: string) {}
+
+    getValue(): string {
+        return `group:${this.groupLabel}`;
+    }
+}
