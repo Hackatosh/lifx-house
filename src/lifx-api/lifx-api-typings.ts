@@ -56,9 +56,38 @@ export interface SetStateBody {
     fast?: boolean;
 }
 
-export interface SetStateResult {
-    id: string;
-    status: 'ok' | string;
-    label: string;
+export interface AffectedLightsResult {
+    results: Array<{
+        id: string;
+        status: 'ok' | string;
+        label: string;
+    }>
 }
 
+export interface StateDeltaBody {
+    power?: PowerState;
+    duration?: number;
+    infrared?: number;
+    hue?: number;
+    saturation?: number;
+    brightness?: number;
+    kelvin?: string;
+    fast?: boolean
+}
+
+export interface PowerToggleBody {
+    duration?: number;
+}
+
+export interface EffectsOffBody {
+    power_off?: boolean;
+}
+
+export interface SendPulseBody {
+    color: Color;
+    from_color?: Color;
+    period?: number;
+    cycles?: number;
+    persist?: boolean;
+    power_on?: boolean;
+}
