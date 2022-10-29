@@ -1,9 +1,11 @@
+export type PowerState = 'on' | 'off';
+
 export interface Light {
     id: string;
     uuid: string;
     label: string;
     connected: boolean;
-    power: 'on' | 'off';
+    power: PowerState;
     color: {
         hue: number;
         saturation: number;
@@ -38,4 +40,10 @@ export interface Light {
     };
     last_seen: string; // ISO String
     seconds_since_seen: number;
+}
+
+export interface SetStateResult {
+    id: string;
+    status: 'ok' | string;
+    label: string;
 }
